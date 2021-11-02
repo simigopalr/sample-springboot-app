@@ -29,7 +29,7 @@ public class ContactServiceImpl implements ContactService {
 
 	@Override
 	public ResponseEntity<List<Contact>> searchByLastNameAndFirstName(String lastName, String firstName) {		
-		List<Contact> contactList = repo.findByLastNameAndFirstName(lastName, firstName);
+		List<Contact> contactList = repo.findByLastNameAndFirstNameIgnoreCase(lastName, firstName);
 		return new ResponseEntity<List<Contact>>(contactList, HttpStatus.OK);
 	}
 

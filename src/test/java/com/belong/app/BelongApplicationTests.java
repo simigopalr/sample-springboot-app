@@ -65,7 +65,7 @@ class BelongApplicationTests {
 		contact.setLastName("Gopal");
 		contact.setAddress(new Address());
 		contactList.add(contact);
-		when(repo.findByLastNameAndFirstName("Simi", "Gopal")).thenReturn(contactList);		
+		when(repo.findByLastNameAndFirstNameIgnoreCase("Simi", "Gopal")).thenReturn(contactList);		
 		assertEquals("123456789", service.searchByLastNameAndFirstName("Simi", "Gopal").getBody().get(0).getContactNumber());
 		
 	}
